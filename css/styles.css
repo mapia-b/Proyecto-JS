@@ -1,0 +1,23 @@
+h1 {
+    color: #6d6df1;
+    text-align: center;
+}
+
+h2 {
+    background-color: #a3a3cc;
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    color: #5c3da3;
+}
+
+.img{
+    display: block;
+    text-align: center;
+}
+
+img {
+       width: 80%;
+}
