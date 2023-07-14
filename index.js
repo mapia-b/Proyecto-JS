@@ -122,10 +122,25 @@ const puntosDeScore = calculoScore()
 const rangoSeveridad = severidad(score)
 
 console.log("Paciente con CURB-65 de: " + puntosDeScore + ", lo cual determina un " + rangoSeveridad)
-console.log ("Recordar que el score CURB-65 es una herramienta más y deberá ser valorando en conjunto con la presentación clínica del paciente")
+console.log ("!! Recordar que el score CURB-65 es una herramienta más y deberá ser valorando en conjunto con la presentación clínica del paciente")
 
-//Bucle con while 
-
+//Uso switch para definir que medidas iniciales se deberán tomar segun el puntaje
+switch (score){
+    case 0:
+    case 1:
+        console.log ("-->Tratamiento domiciliario: administración de fármacos vía oral. Antibioticoterapia  + analgésicos/antitérmicos + reposo + control en policlínica o a domicilio en 72hs")
+        break;
+    case 2:
+        console.log ("-->Tratamiento en cuidados moderados: administración de fármacos por vía intravenosa. Anttibioticoterapia + analgésicos/antitérmicos + valorar necesidad de oxígeno + control estrecho") 
+        break;
+    case 3:
+    case 4:
+    case 5: 
+        console.log ("-->Tratamiento en cuidados intermedios o UCI: administración de fármacos por vía intravenosa. Anttibioticoterapia de amplio espectro + analgésicos/antitérmicos + aporte de oxígeno (valorar según cada caso: MFL, MFC, máscara con reservorio, OAF, IOT) + control estrecho")
+        break;
+    default: 
+        console.log ("No se ha podido calcular el score CURB-65 de forma correcta. Ingresa los datos nuevamente")
+}
 
 
 //Guardo los datos en objetos usando sintaxis class
