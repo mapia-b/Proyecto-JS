@@ -5,6 +5,11 @@ let frecuenciaRespiratoria = parseInt(prompt("Ingrese valor de frecuencia respir
 let presionSistolica = parseInt(prompt("Ingrese el valor de presion arterial sistólica en reposo (mmHg)"))
 let edad = parseInt(prompt("Ingrese la edad del paciente"))
 
+//Bucle con while 
+while (edad <= 14) {
+    console.log ("Score no aplicable a pacientes pediátricos")
+    edad =parseInt(prompt("Ingrese nuevamente la edad del paciente"))
+}
 
 //Defino condicional para c/u de las variables
 
