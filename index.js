@@ -165,9 +165,11 @@ class Paciente {
 const paciente1 = new Paciente ("Walter", "Alonso", 3, "ASSE")
 const paciente2 = new Paciente ("Marta", "Gonzalez", 1, "CASMU")
 const paciente3 = new Paciente ("Manuel", "Ferreira", 2, "Hospital Británico")
-const paciente4 = new Paciente ("Andrea", "Sicco", 4, "Seguro internacional")
+const paciente4 = new Paciente ("Sophie", "Jackson", 4, "Seguro internacional")
 const paciente5 = new Paciente ("Margarita", "Dominguez", 5, "CASMU")
 const paciente6 = new Paciente ("Luis", "Pérez", 4, "CASMU")
+
+
 
 //array de objetos: pacientes
 const pacientesMujeres = [paciente2, paciente4, paciente5]
@@ -178,9 +180,19 @@ pacientesMujeres.unshift (new Paciente ("Alejandra", "Ramos", 1, "ASSE"))
 
 const pacientesTotales = pacientesMujeres.concat(pacientesHombres)
 
-//filtrar pacientes internados segun score
+//filtrar pacientes internados o en domicilio segun score
 const internacion = pacientesTotales.filter((paciente)=>paciente.puntaje >= 2)
 const domicilio = pacientesTotales.filter ((paciente)=>paciente.puntaje <= 1)
 
+//filtrar pacientes segun mutualista 
+const casmu = pacientesTotales.filter ((paciente)=>paciente.prestador === "CASMU")
+const asesp = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "ASESP"))
+const asse = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "ASSE"))
+const hb = pacientesTotales.filter ((paciente)=>paciente.prestador === "Hospital Británico")
+const seguro = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "Seguro internacional"))
 
 
+for (const paciente of pacientesTotales) {
+    console.log ("Paciente con un score de:" + paciente.puntaje)
+    console.log ("Activo en: " + paciente.prestador)
+}
