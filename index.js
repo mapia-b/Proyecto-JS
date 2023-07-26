@@ -155,6 +155,7 @@ class Paciente {
         this.apellido = apellido;
         this.puntaje = puntaje;
         this.prestador = prestador;
+       
     }
     indicar() {
         console.log("Cobertura: " + this.prestador + ". Estado: ACTIVO")
@@ -165,3 +166,21 @@ const paciente1 = new Paciente ("Walter", "Alonso", 3, "ASSE")
 const paciente2 = new Paciente ("Marta", "Gonzalez", 1, "CASMU")
 const paciente3 = new Paciente ("Manuel", "Ferreira", 2, "Hospital Británico")
 const paciente4 = new Paciente ("Andrea", "Sicco", 4, "Seguro internacional")
+const paciente5 = new Paciente ("Margarita", "Dominguez", 5, "CASMU")
+const paciente6 = new Paciente ("Luis", "Pérez", 4, "CASMU")
+
+//array de objetos: pacientes
+const pacientesMujeres = [paciente2, paciente4, paciente5]
+const pacientesHombres = [paciente1, paciente3, paciente6]
+
+pacientesMujeres.push (new Paciente ("Maria", "Martinez", 3, "ASESP"))
+pacientesMujeres.unshift (new Paciente ("Alejandra", "Ramos", 1, "ASSE"))
+
+const pacientesTotales = pacientesMujeres.concat(pacientesHombres)
+
+//filtrar pacientes internados segun score
+const internacion = pacientesTotales.filter((paciente)=>paciente.puntaje >= 2)
+const domicilio = pacientesTotales.filter ((paciente)=>paciente.puntaje <= 1)
+
+
+
