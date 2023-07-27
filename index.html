@@ -1,24 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Preentrega Coderhouse - Maria Pia Barreiro </title>
+    <title>Preentrega JS- Maria Pia Barreiro </title>
+    <link rel="shortcut icon" href="./img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@500&family=Hind:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <h1>CURB-65</h1>
-    <h2>Score para determinar gravedad y lugar de tratamiento en pacientes con neumonía</h2>
+    <header>
+        <h1>Score CURB-56</h1>
+    </header>
 
-    <main class="img">
-        <h3>Score:</h3>
-    <img src="./img/CURB 65.png" alt="Score CURB-65">
+    <section>
+        <h3>Escala de severidad para neumonia adquirida en comunidad</h3>
+    </section>
+
+    <main class="formulario">
+        <!--C-->
+        <div>
+            <h5>Conciencia alterada?</h5>
+            <input type="radio" name="mente" id="concienciaSi" >
+            <label for="conciencia"> SI </label>
+            <input type="radio" name="mente" id="concienciaNo">
+            <label for="conciencia"> NO </label>
+        </div>
+
+        <!--U-->
+        <div>
+            <h5>Valor de urea</h5>
+            <input type="number" class="numeros" id="urea" required>
+        </div>
+
+        <!--R-->
+        <div>
+            <h5>Frecuencia respiratoria</h5>
+            <input type="number" class="numeros" id="fr" required>
+        </div>
+
+        <!--B-->
+        <div>
+            <h5>Presion arterial sistólica</h5>
+            <input type="number" class="numeros" id="pas" required>
+        </div>
+
+         <!--65-->
+         <div>
+            <h5>Edad</h5>
+            <input type="radio" name="edad" id="menor65" >
+            <label for="menor65"> Menor de 65 años </label>
+            <input type="radio" name="edad" id="mayor65" >
+            <label for="mayor65"> Mayor de 65 años </label>
+        </div>
+
+        <button class="botonCalculo" >Calcular score</button>
+
+        <label for="resultado">Resultado total</label>
+        <input type="text" id="resultado">
+       
     </main>
+    
 
-    <p>Mi idea sería que se ingresen los datos en forma de input pero usaré prompt para esta primer entrega. </p>
-   
+    <footer>
+        <h4> Preentrega Coderhouse curso JavaScript comisión 43155 - julio 2023 </h4>
+        <p> María Pía Barreiro </p>
+    </footer>
+
     <!--Linkeo con archivo .js-->
     <script src="./index.js"></script>
 </body>
+
 </html>

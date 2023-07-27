@@ -1,23 +1,61 @@
-h1 {
-    color: #6d6df1;
-    text-align: center;
+html {
+  font-family: "Hind", sans-serif;
 }
 
-h2 {
-    background-color: #a3a3cc;
-    color: white;
-    text-align: center;
+h1 {
+  font-family: "Hind Vadodara", sans-serif;
+  text-align: center;
+  background-color: rgb(138, 231, 138);
+  color: rgb(5, 5, 75);
 }
 
 h3 {
-    color: #5c3da3;
+  color: rgb(128, 128, 128);
 }
 
-.img{
-    display: block;
-    text-align: center;
+h5 {
+  text-align: center;
 }
 
-img {
-       width: 80%;
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(128, 128, 128);
+  border: 10px;
 }
+.formulario .numeros {
+  width: 60px;
+}
+
+.botonCalculo {
+  color: rgb(5, 5, 75);
+  border-radius: 10px;
+  background-color: rgb(138, 231, 138);
+  border: 2px;
+  width: 40%;
+  margin: 50px;
+  height: 30px;
+  font-size: medium;
+}
+.botonCalculo:hover {
+  transform: scale(1.1);
+}
+
+#resultado {
+  margin-bottom: 50px;
+}
+
+footer {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  background-color: rgb(128, 128, 128);
+  color: rgb(5, 5, 75);
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

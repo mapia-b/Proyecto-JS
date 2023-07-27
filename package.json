@@ -1,0 +1,19 @@
+{
+  "name": "preentrega-js--mapiabarreiro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapia-b/Preentregas-PiaBarreiro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapia-b/Preentregas-PiaBarreiro/issues"
+  },
+  "homepage": "https://github.com/mapia-b/Preentregas-PiaBarreiro#readme"
+}
