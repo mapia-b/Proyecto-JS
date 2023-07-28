@@ -11,6 +11,7 @@ h1 {
 
 h3 {
   color: rgb(128, 128, 128);
+  margin-left: 50px;
 }
 
 h5 {
@@ -27,6 +28,7 @@ h5 {
 }
 .formulario .numeros {
   width: 60px;
+  margin-left: 30px;
 }
 
 .botonCalculo {

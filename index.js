@@ -12,19 +12,16 @@ while (edad <= 14) {
 }
 
 //Defino condicional para c/u de las variables
-
 //Estado de conciencia
 if (estadoMental !== 'SI' && estadoMental !== "NO") {
     console.log("Dato inválido")
 } else {
     if (estadoMental === "SI") {
         console.log("Paciente confuso")
-
     } else {
         console.log("Buen estado de conciencia")
     }  
 }
-
 //Valor de urea en sangre
 if (isNaN(urea)) {
     console.log("Dato inválido")
@@ -36,7 +33,6 @@ else {
         console.log("Uricemia dentro de rango normal")
     }
 }
-
 //Valor de frecuencia respiratoria
 if (isNaN(frecuenciaRespiratoria)) {
     console.log("Dato inválido")
@@ -52,7 +48,6 @@ if (isNaN(frecuenciaRespiratoria)) {
         console.log("FR normal")
     }
 }
-
 //Valor de presión arterial sistólica
 if (isNaN(presionSistolica)) {
     console.log("Dato inválido")
@@ -68,14 +63,12 @@ if (isNaN(presionSistolica)) {
         console.log("PAS normal")
     }
 }
-
 //Valor de edad
 if (isNaN(edad)) {
     console.log("Dato inválido")
 } else {
     if (edad >= 65) {
         console.log("Paciente mayor de 65 años")
-
     } else {
         console.log("Paciente menor de 65 años")
     }
@@ -84,30 +77,23 @@ if (isNaN(edad)) {
 //Suma del score 
 //Inicializo la variable fuera de la función
 let score = 0
-
 //Funcion para cálculo del score 
 function calculoScore() {
-
     if (estadoMental !== "NO") {
         score += 1 //suma 1 punto
     }
-
     if (urea >= 20) {
         score += 1
     }
-
     if (frecuenciaRespiratoria >= 30) {
         score += 1
     }
-
     if (presionSistolica <= 90) {
         score += 1
     }
-
     if (edad >= 65) {
         score += 1
     }
-
     return score;
 }
 
@@ -121,7 +107,6 @@ function severidad(score) {
         return "Riesgo muy alto. Deberá realizar tratamiento en UCI";
     }
 }
-
 
 const puntosDeScore = calculoScore()
 const rangoSeveridad = severidad(score)
@@ -147,7 +132,6 @@ switch (score){
         console.log ("No se ha podido calcular el score CURB-65 de forma correcta. Ingresa los datos nuevamente")
 }
 
-
 //Guardo los datos en objetos usando sintaxis class
 class Paciente {
     constructor(nombre, apellido, puntaje, prestador) {
@@ -155,7 +139,6 @@ class Paciente {
         this.apellido = apellido;
         this.puntaje = puntaje;
         this.prestador = prestador;
-       
     }
     indicar() {
         console.log("Cobertura: " + this.prestador + ". Estado: ACTIVO")
@@ -168,8 +151,6 @@ const paciente3 = new Paciente ("Manuel", "Ferreira", 2, "Hospital Británico")
 const paciente4 = new Paciente ("Sophie", "Jackson", 4, "Seguro internacional")
 const paciente5 = new Paciente ("Margarita", "Dominguez", 5, "CASMU")
 const paciente6 = new Paciente ("Luis", "Pérez", 4, "CASMU")
-
-
 
 //array de objetos: pacientes
 const pacientesMujeres = [paciente2, paciente4, paciente5]
@@ -190,7 +171,6 @@ const asesp = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "AS
 const asse = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "ASSE"))
 const hb = pacientesTotales.filter ((paciente)=>paciente.prestador === "Hospital Británico")
 const seguro = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "Seguro internacional"))
-
 
 for (const paciente of pacientesTotales) {
     console.log ("Paciente con un score de:" + paciente.puntaje)
