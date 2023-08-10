@@ -4,28 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Preentrega JS- Maria Pia Barreiro </title>
-    <link rel="shortcut icon" href="./img/icon.png">
+    <link rel="shortcut icon" href="../img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@500&family=Hind:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@500&family=Hind:wght@300&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1>Score CURB-56</h1>
-    </header>
 
-    <section class="h3">
-        <h3>Escala de severidad para neumonia adquirida en comunidad</h3>
+    <section class="tituloindex spikes">
+        <h1>Score CURB-56:</h1>
+        <p class="subtitulo">Escala de severidad para neumonia adquirida en comunidad</p>
     </section>
 
     <main class="formulario">
         <!--C-->
         <div>
             <h5>Conciencia alterada?</h5>
-            <input type="radio" name="mente" id="concienciaSi" >
+            <input type="radio" name="mente" id="concienciaSi">
             <label for="conciencia"> SI </label>
             <input type="radio" name="mente" id="concienciaNo">
             <label for="conciencia"> NO </label>
@@ -49,22 +48,22 @@
             <input type="number" class="numeros" id="pas" required>
         </div>
 
-         <!--65-->
-         <div>
+        <!--65-->
+        <div>
             <h5>Edad</h5>
-            <input type="radio" name="edad" id="menor65" >
+            <input type="radio" name="edad" id="menor65">
             <label for="menor65"> Menor de 65 años </label>
-            <input type="radio" name="edad" id="mayor65" >
+            <input type="radio" name="edad" id="mayor65">
             <label for="mayor65"> Mayor de 65 años </label>
         </div>
 
-        <button class="botonCalculo" >Calcular score</button>
+        <button class="botonCalculo">Calcular score</button>
 
         <label for="resultado">Resultado total</label>
         <input type="text" id="resultado">
-       
+
     </main>
-    
+
 
     <footer>
         <h4> Preentrega Coderhouse curso JavaScript comisión 43155 - julio 2023 </h4>

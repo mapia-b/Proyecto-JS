@@ -1,0 +1,63 @@
+
+.caratula {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-principal;
+  
+}
+
+.inicio {
+    font-size: 100px;
+    background-color: none;
+}
+
+.imgpadre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    .imgpulmones{
+    width: 150px;
+   margin-left: 590px;
+}
+}
+
+.linkprincipal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: $color-terciario;
+    margin: 50px;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+
+.spikes {
+    position: relative;
+    background:  rgb(138, 231, 138);
+    height: 50vh;
+  }
+  
+  .spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: -0%;
+    top: 100%;
+    z-index: 10;
+    display: block;
+    height: 50px;
+    background-size: 50px 100%;
+    background-image: linear-gradient(135deg, rgb(138, 231, 138) 25%, transparent 25%), linear-gradient(225deg,  rgb(138, 231, 138) 25%, transparent 25%);
+    background-position: 0 0;
+  }
