@@ -39,4 +39,7 @@ boton.addEventListener("click", () => {
     verPacientes()
 })
 
+localStorage.getItem ("pacientes")
+
+
 
