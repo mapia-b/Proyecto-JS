@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Preentrega JS- Maria Pia Barreiro </title>
+    <title>Página de inicio</title>
     <link rel="shortcut icon" href="./img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,79 +14,15 @@
 </head>
 
 <body>
-
-    <section class="tituloindex spikes">
-        <h1>Score CURB-65:</h1>
-        <p class="subtitulo">Escala de severidad para neumonia adquirida en comunidad</p>
+    <section class="caratula spikes">
+       <h1 class="inicio"> Score CURB-65</h1>
     </section>
 
-    <form id="formulario">
-        <!--C-->
-        <label>
-            <input type="checkbox" id="concienciaSi" value="1">
-         Conciencia alterada 
-        </label>
-
-        <!--U-->
-        <label>
-            <input type="checkbox" id="urea" value="1">
-          Urea ≥ 20
-        </label>
-
-        <!--R-->
-        <label>
-            <input type="checkbox" id="fr" value="1">
-        Frecuencia respiratoria ≥ 30
-        </label>
-
-        <!--B-->
-        <label>
-            <input type="checkbox" id="pas" value="1">
-        PAS ≤ 90 
-        </label>
-
-        <!--65-->
-        <label>
-            <input type="checkbox" id="edad" value="1">
-        Edad ≥ 65 
-        </label>
-
-        <button id="botonCalculo">Calcular score</button>
-        
-        <p id="resultado"></p>
-        <p id="descripcion"></p>
-
-        <p id="mensajeResaltado"></p>
-    </form>
-
-    <div class="padreDiv">
-        <iconify-icon icon="zondicons:exclamation-outline" style="color: #05054b;" class="iconify"></iconify-icon>
-        <p class="reminder">
-            Recordar que el score CURB-65 es una herramienta más y deberá ser valorado en conjunto con la presentación clínica del paciente
-        </p>
-    </div>
-
-
-    
-    <section class="contenedor">
-        <h4>Registro de los pacientes:</h4>
-        <input type="text" name="" class="datos" id="persona" placeholder="Nombre completo"/>
-        <input type="number" min="0" max="5" step="0" class="datos" id="suScore" placeholder="Score CURB-65"/>
-        <button id="btn">Agregar</button>
-    </section>
-
-    <ul id="lista"> </ul>
-
-    <footer>
-        <h4> Preentrega Coderhouse curso JavaScript comisión 43155 - agosto 2023 </h4>
-        <p> María Pía Barreiro </p>
-    </footer>
-
-    <!--Linkeo con archivo .js-->
-    <script src="./js/index.js"></script>
-    <script src="./js/array.js"></script>
-
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <main class="imgpadre">
+        <img src="./img/icon.png" alt="Imagen pulmones" class="imgpulmones">
+        <a href="./score.html" class="linkprincipal">- Click aquí para calcular score -</a>
+    </main>
+   
 </body>
 
 </html>
