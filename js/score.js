@@ -47,7 +47,7 @@ function mensaje(score) {
             return `Tratamiento domiciliario: administración de fármacos vía oral. Antibioticoterapia  + analgésicos/antitérmicos + reposo + control en policlínica o a domicilio en 72hs`
 
         case 2:
-            return `Tratamiento en cuidados moderados: administración de fármacos por vía intravenosa. Anttibioticoterapia + analgésicos/antitérmicos + valorar necesidad de oxígeno + control estrecho`
+            return `Tratamiento en cuidados moderados: administración de fármacos por vía intravenosa. Antibioticoterapia + analgésicos/antitérmicos + valorar necesidad de oxígeno + control estrecho`
 
         case 3:
         case 4:
