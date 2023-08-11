@@ -9,9 +9,10 @@ h1{
     color: $color-terciario;
 }
 
-h5 {
-  text-align: center;
+h4 {
+    margin: auto;
 }
+
 
 .tituloindex{
     display: flex;
@@ -49,7 +50,7 @@ h5 {
 }
  
 
-.formulario {
+#formulario {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,16 +58,10 @@ h5 {
     color: $color-secundario;
     border: 10px;
     margin-top: 50px;
-
-    .numeros{
-        width: 60px;
-        margin-left: 30px;           
-    }
+   
 }
 
-
-
-.botonCalculo {
+#botonCalculo {
     color: $color-terciario;
     border-radius: 10px;
     background-color: $color-principal;
@@ -82,10 +77,69 @@ h5 {
     }
 }
 
+.padreDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: start;
 
- #resultado{
-    margin-bottom: 50px;
+    .reminder {
+    display: block;
+    text-align: start;
+    font-size: smaller;
  }
+
+    .iconify {
+   font-size: 30px;
+ }
+}
+
+#resultado {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#descripcion {
+    background-color: $color-terciario;
+    color: $color-principal;
+}
+#mensajeResaltado {
+    color: $color-terciario;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 30px;
+}
+
+.datos { 
+    display: flex;
+    flex-direction: row;
+    border: 50px, $color-terciario;
+    border-radius: 10px;
+    width: 500px;
+    padding: 5px;
+    margin-top: 10px;
+    &:hover{
+        border-color: $color-principal;
+    }
+}
+
+#btn {
+   
+    color: $color-terciario;
+    border-radius: 10px;
+    background-color: $color-secundario;
+    border: 2px;
+    width: 100px;
+    margin: auto;
+    height: 20px;
+    font-size: 15px;
+
+}
 
 footer{
     font-size: small;
@@ -97,4 +151,6 @@ footer{
     color: $color-terciario;
     width: 100%;
 }
+
+
 

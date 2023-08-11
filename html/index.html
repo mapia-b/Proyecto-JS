@@ -16,62 +16,76 @@
 <body>
 
     <section class="tituloindex spikes">
-        <h1>Score CURB-56:</h1>
+        <h1>Score CURB-65:</h1>
         <p class="subtitulo">Escala de severidad para neumonia adquirida en comunidad</p>
     </section>
 
-    <main class="formulario">
+    <form id="formulario">
         <!--C-->
-        <div>
-            <h5>Conciencia alterada?</h5>
-            <input type="radio" name="mente" id="concienciaSi">
-            <label for="conciencia"> SI </label>
-            <input type="radio" name="mente" id="concienciaNo">
-            <label for="conciencia"> NO </label>
-        </div>
+        <label>
+            <input type="checkbox" id="concienciaSi" value="1">
+         Conciencia alterada 
+        </label>
 
         <!--U-->
-        <div>
-            <h5>Valor de urea</h5>
-            <input type="number" class="numeros" id="urea" required>
-        </div>
+        <label>
+            <input type="checkbox" id="urea" value="1">
+          Urea ≥ 20
+        </label>
 
         <!--R-->
-        <div>
-            <h5>Frecuencia respiratoria</h5>
-            <input type="number" class="numeros" id="fr" required>
-        </div>
+        <label>
+            <input type="checkbox" id="fr" value="1">
+        Frecuencia respiratoria ≥ 30
+        </label>
 
         <!--B-->
-        <div>
-            <h5>Presion arterial sistólica</h5>
-            <input type="number" class="numeros" id="pas" required>
-        </div>
+        <label>
+            <input type="checkbox" id="pas" value="1">
+        PAS ≤ 90 
+        </label>
 
         <!--65-->
-        <div>
-            <h5>Edad</h5>
-            <input type="radio" name="edad" id="menor65">
-            <label for="menor65"> Menor de 65 años </label>
-            <input type="radio" name="edad" id="mayor65">
-            <label for="mayor65"> Mayor de 65 años </label>
-        </div>
+        <label>
+            <input type="checkbox" id="edad" value="1">
+        Edad ≥ 65 
+        </label>
 
-        <button class="botonCalculo">Calcular score</button>
+        <button id="botonCalculo">Calcular score</button>
+        
+        <p id="resultado"></p>
+        <p id="descripcion"></p>
 
-        <label for="resultado">Resultado total</label>
-        <input type="text" id="resultado">
+        <p id="mensajeResaltado"></p>
+    </form>
 
-    </main>
+    <div class="padreDiv">
+        <iconify-icon icon="zondicons:exclamation-outline" style="color: #05054b;" class="iconify"></iconify-icon>
+        <p class="reminder">
+            Recordar que el score CURB-65 es una herramienta más y deberá ser valorado en conjunto con la presentación clínica del paciente
+        </p>
+    </div>
 
+
+    
+    <section class="contenedor">
+        <h4>Registro de los pacientes:</h4>
+        <input type="text" name="" class="datos" id="persona" placeholder="Nombre completo"/>
+        <input type="number" min="0" max="5" step="0" class="datos" id="suScore" placeholder="Score CURB-65"/>
+        <button id="btn">Agregar</button>
+    </section>
+
+    <ul id="lista"> </ul>
 
     <footer>
-        <h4> Preentrega Coderhouse curso JavaScript comisión 43155 - julio 2023 </h4>
+        <h4> Preentrega Coderhouse curso JavaScript comisión 43155 - agosto 2023 </h4>
         <p> María Pía Barreiro </p>
     </footer>
 
     <!--Linkeo con archivo .js-->
-    <script src="./index.js"></script>
+    <script src="../index.js"></script>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 
 </html>

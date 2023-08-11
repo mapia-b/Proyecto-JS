@@ -1,103 +1,34 @@
 //Valores necesarios para el cálculo del score
-let estadoMental = prompt("Paciente confuso? Ingresa SI o NO")
-let urea = parseInt(prompt("Ingrese el valor de uricemia (mg/dL)"))
-let frecuenciaRespiratoria = parseInt(prompt("Ingrese valor de frecuencia respiratoria en reposo"))
-let presionSistolica = parseInt(prompt("Ingrese el valor de presion arterial sistólica en reposo (mmHg)"))
-let edad = parseInt(prompt("Ingrese la edad del paciente"))
+const form = document.getElementById("formulario")
+const btn = document.getElementById("botonCalculo")
+const resultado = document.getElementById("resultado")
 
-//Bucle con while 
-while (edad <= 14) {
-    console.log ("Score no aplicable a pacientes pediátricos")
-    edad =parseInt(prompt("Ingrese nuevamente la edad del paciente"))
-}
 
-//Defino condicional para c/u de las variables
-//Estado de conciencia
-if (estadoMental !== 'SI' && estadoMental !== "NO") {
-    console.log("Dato inválido")
-} else {
-    if (estadoMental === "SI") {
-        console.log("Paciente confuso")
-    } else {
-        console.log("Buen estado de conciencia")
-    }  
-}
-//Valor de urea en sangre
-if (isNaN(urea)) {
-    console.log("Dato inválido")
-}
-else {
-    if (urea >= 20) {
-        console.log("Uricemia elevada")
-    } else {
-        console.log("Uricemia dentro de rango normal")
-    }
-}
-//Valor de frecuencia respiratoria
-if (isNaN(frecuenciaRespiratoria)) {
-    console.log("Dato inválido")
-} else {
-    if (frecuenciaRespiratoria >= 30) {
-        console.log("FR muy elevada")
+//Suma del score al hacer click en el boton 
+btn.addEventListener("click", calculoScore);
 
-    } else if (frecuenciaRespiratoria >= 20 && frecuenciaRespiratoria < 30) {
-        console.log("FR elevada, mantener en observación")
-    } else if (frecuenciaRespiratoria <= 11) {
-        console.log("FR baja")
-    } else {
-        console.log("FR normal")
-    }
-}
-//Valor de presión arterial sistólica
-if (isNaN(presionSistolica)) {
-    console.log("Dato inválido")
-} else {
-    if (presionSistolica <= 90) {
-        console.log("PAS baja")
-
-    } else if (presionSistolica >= 140 && presionSistolica < 160) {
-        console.log("PAS elevada pero permitida")
-    } else if (presionSistolica >= 160) {
-        console.log("PAS elevada, se recomienda descender")
-    } else {
-        console.log("PAS normal")
-    }
-}
-//Valor de edad
-if (isNaN(edad)) {
-    console.log("Dato inválido")
-} else {
-    if (edad >= 65) {
-        console.log("Paciente mayor de 65 años")
-    } else {
-        console.log("Paciente menor de 65 años")
-    }
+//Funcion para cálculo del score
+function calculoScore(e) {
+    e.preventDefault()
+    const items = document.querySelectorAll("input[type=checkbox]:checked")
+    //inicializo la variable en 0
+    let score = 0
+    //itero sobre los inputs seleccionados y voy sumando 1
+    items.forEach(item => {
+        score += parseInt(item.value);
+    })
+    console.log("El score es: " + score)
+    //agrego el resultado al html
+    resultado.innerText = `El Score CURB-65 para este paciente es: ${score}`
+    descripcion.innerText = severidad(score)
+    mensajeResaltado.innerText = mensaje(score)
+    //desmarco los checkboxs
+    items.forEach(item => {
+        item.checked = false
+    })
 }
 
-//Suma del score 
-//Inicializo la variable fuera de la función
-let score = 0
-//Funcion para cálculo del score 
-function calculoScore() {
-    if (estadoMental !== "NO") {
-        score += 1 //suma 1 punto
-    }
-    if (urea >= 20) {
-        score += 1
-    }
-    if (frecuenciaRespiratoria >= 30) {
-        score += 1
-    }
-    if (presionSistolica <= 90) {
-        score += 1
-    }
-    if (edad >= 65) {
-        score += 1
-    }
-    return score;
-}
-
-//Función para determinar severidad segun puntaje 
+//Funcion que explica el riesgo
 function severidad(score) {
     if (score === 0 || score === 1) {
         return "Riesgo bajo. Puede realizar tratamiento ambulatorio";
@@ -108,71 +39,69 @@ function severidad(score) {
     }
 }
 
-const puntosDeScore = calculoScore()
-const rangoSeveridad = severidad(score)
+//Defino que medidas se deben tomar en cada caso
+function mensaje(score) {
+    switch (score) {
+        case 0:
+        case 1:
+            return `Tratamiento domiciliario: administración de fármacos vía oral. Antibioticoterapia  + analgésicos/antitérmicos + reposo + control en policlínica o a domicilio en 72hs`
 
-console.log("Paciente con CURB-65 de: " + puntosDeScore + ", lo cual determina un " + rangoSeveridad)
-console.log ("!! Recordar que el score CURB-65 es una herramienta más y deberá ser valorando en conjunto con la presentación clínica del paciente")
+        case 2:
+            return `Tratamiento en cuidados moderados: administración de fármacos por vía intravenosa. Anttibioticoterapia + analgésicos/antitérmicos + valorar necesidad de oxígeno + control estrecho`
 
-//Uso switch para definir que medidas iniciales se deberán tomar segun el puntaje
-switch (score){
-    case 0:
-    case 1:
-        console.log ("-->Tratamiento domiciliario: administración de fármacos vía oral. Antibioticoterapia  + analgésicos/antitérmicos + reposo + control en policlínica o a domicilio en 72hs")
-        break;
-    case 2:
-        console.log ("-->Tratamiento en cuidados moderados: administración de fármacos por vía intravenosa. Anttibioticoterapia + analgésicos/antitérmicos + valorar necesidad de oxígeno + control estrecho") 
-        break;
-    case 3:
-    case 4:
-    case 5: 
-        console.log ("-->Tratamiento en cuidados intermedios o UCI: administración de fármacos por vía intravenosa. Anttibioticoterapia de amplio espectro + analgésicos/antitérmicos + aporte de oxígeno (valorar según cada caso: MFL, MFC, máscara con reservorio, OAF, IOT) + control estrecho")
-        break;
-    default: 
-        console.log ("No se ha podido calcular el score CURB-65 de forma correcta. Ingresa los datos nuevamente")
-}
+        case 3:
+        case 4:
+        case 5:
+            return `Tratamiento en cuidados intermedios o UCI: administración de fármacos por vía intravenosa. Anttibioticoterapia de amplio espectro + analgésicos/antitérmicos + aporte de oxígeno (valorar según cada caso: MFL, MFC, máscara con reservorio, OAF, IOT) + control estrecho`
 
-//Guardo los datos en objetos usando sintaxis class
-class Paciente {
-    constructor(nombre, apellido, puntaje, prestador) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.puntaje = puntaje;
-        this.prestador = prestador;
-    }
-    indicar() {
-        console.log("Cobertura: " + this.prestador + ". Estado: ACTIVO")
+        default:
+            return `No se ha podido calcular el score CURB-65 de forma correcta. Ingresa los datos nuevamente`
     }
 }
 
-const paciente1 = new Paciente ("Walter", "Alonso", 3, "ASSE")
-const paciente2 = new Paciente ("Marta", "Gonzalez", 1, "CASMU")
-const paciente3 = new Paciente ("Manuel", "Ferreira", 2, "Hospital Británico")
-const paciente4 = new Paciente ("Sophie", "Jackson", 4, "Seguro internacional")
-const paciente5 = new Paciente ("Margarita", "Dominguez", 5, "CASMU")
-const paciente6 = new Paciente ("Luis", "Pérez", 4, "CASMU")
+let nombre = document.getElementById ("persona") 
+let puntaje = document.getElementById ("suScore") 
+let boton = document.getElementById ("btn")
+let list = document.getElementById ("lista")
+const pacientes = []
+console.log(pacientes)
 
-//array de objetos: pacientes
-const pacientesMujeres = [paciente2, paciente4, paciente5]
-const pacientesHombres = [paciente1, paciente3, paciente6]
-
-pacientesMujeres.push (new Paciente ("Maria", "Martinez", 3, "ASESP"))
-pacientesMujeres.unshift (new Paciente ("Alejandra", "Ramos", 1, "ASSE"))
-
-const pacientesTotales = pacientesMujeres.concat(pacientesHombres)
-
-//filtrar pacientes internados o en domicilio segun score
-const internacion = pacientesTotales.filter((paciente)=>paciente.puntaje >= 2)
-const domicilio = pacientesTotales.filter ((paciente)=>paciente.puntaje <= 1)
-
-//filtrar pacientes segun mutualista 
-const casmu = pacientesTotales.filter ((paciente)=>paciente.prestador === "CASMU")
-const asesp = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "ASESP"))
-const asse = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "ASSE"))
-const hb = pacientesTotales.filter ((paciente)=>paciente.prestador === "Hospital Británico")
-const seguro = pacientesTotales.filter ((pacientes)=>(pacientes.prestador === "Seguro internacional"))
-
-for (const paciente of pacientesTotales) {
-    console.log ("Paciente con un score de:" + paciente.puntaje)
-    console.log ("Activo en: " + paciente.prestador)
+//Agregar lista de pacientes y su puntaje
+nuevoPaciente = () => { 
+    const paciente = nombre.value 
+    const puntos = puntaje.value
+    pacientes.push ([paciente, puntos]) 
+    nombre.value = ""
+    puntaje.value = ""
+    console.log (pacientes); 
 }
+
+//Interactuo con el DOM
+function verPacientes () { 
+    list.innerHTML = ""
+    //recorro el array tareas con forEach 
+   pacientes.forEach ((item)=> (
+    list.innerHTML += `
+        <li>
+        <span>${item[0]}</span>
+         <span>${item[1]}</span>
+        </li>`
+  ))}
+
+
+boton.addEventListener("click", () => {
+    nuevoPaciente()
+    verPacientes()
+})
+
+
+
+
+
+
+
+
+
+
+
+

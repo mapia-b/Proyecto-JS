@@ -67,8 +67,8 @@ h1 {
   color: rgb(5, 5, 75);
 }
 
-h5 {
-  text-align: center;
+h4 {
+  margin: auto;
 }
 
 .tituloindex {
@@ -105,7 +105,7 @@ h5 {
   background-position: 0 0;
 }
 
-.formulario {
+#formulario {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,12 +114,8 @@ h5 {
   border: 10px;
   margin-top: 50px;
 }
-.formulario .numeros {
-  width: 60px;
-  margin-left: 30px;
-}
 
-.botonCalculo {
+#botonCalculo {
   color: rgb(5, 5, 75);
   border-radius: 10px;
   background-color: rgb(138, 231, 138);
@@ -129,12 +125,69 @@ h5 {
   height: 30px;
   font-size: medium;
 }
-.botonCalculo:hover {
+#botonCalculo:hover {
   transform: scale(1.1);
 }
 
+.padreDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-content: start;
+}
+.padreDiv .reminder {
+  display: block;
+  text-align: start;
+  font-size: smaller;
+}
+.padreDiv .iconify {
+  font-size: 30px;
+}
+
 #resultado {
-  margin-bottom: 50px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#descripcion {
+  background-color: rgb(5, 5, 75);
+  color: rgb(138, 231, 138);
+}
+
+#mensajeResaltado {
+  color: rgb(5, 5, 75);
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 30px;
+}
+
+.datos {
+  display: flex;
+  flex-direction: row;
+  border: 50px, rgb(5, 5, 75);
+  border-radius: 10px;
+  width: 500px;
+  padding: 5px;
+  margin-top: 10px;
+}
+.datos:hover {
+  border-color: rgb(138, 231, 138);
+}
+
+#btn {
+  color: rgb(5, 5, 75);
+  border-radius: 10px;
+  background-color: rgb(128, 128, 128);
+  border: 2px;
+  width: 100px;
+  margin: auto;
+  height: 20px;
+  font-size: 15px;
 }
 
 footer {
