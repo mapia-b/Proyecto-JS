@@ -45,10 +45,10 @@ boton.addEventListener("click", () => {
      
 })
 
-//Trabajo con API: fecha y hora
+//Trabajo con API: indicar fecha y hora 
 document.addEventListener ("DOMContentLoaded", function (){
     const fecha = document.getElementById ("date")
-    const url ="http://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires"
+    const url ="https://worldtimeapi.org/api/timezone/America/Argentina/Buenos_Aires"
     fetch (url)
     .then (response => response.json())
     .then (data => {
@@ -72,7 +72,6 @@ document.addEventListener ("DOMContentLoaded", function (){
       fecha.textContent = "Error, no se pudo obtener la informacion requerida";
     })
 })
-
 
 
 

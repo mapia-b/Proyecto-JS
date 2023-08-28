@@ -26,6 +26,7 @@ function calculoScore(e) {
     items.forEach(item => {
         item.checked = false
     })
+
 }
 
 //Funcion que explica el riesgo
@@ -60,7 +61,13 @@ function mensaje(score) {
 }
 
 
+const color = document.getElementById("disclaimer");
 
+btn.addEventListener("mouseover", function() {
+ color.style.backgroundColor === "white"
+    ? color.style.backgroundColor = "rgb(189, 189, 189)"
+    : color.style.backgroundColor = "white";
+});
 
 
 
