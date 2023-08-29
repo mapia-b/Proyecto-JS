@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(138, 231, 138);
+  background-color: rgb(226, 241, 88);
 }
 
 .inicio {
@@ -15,11 +15,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 .imgpadre .imgpulmones {
-  width: 150px;
-  margin-left: 590px;
+  width: 200px;
+  margin: auto;
 }
 
 .linkprincipal {
@@ -38,7 +38,7 @@
 
 .spikes {
   position: relative;
-  background: rgb(138, 231, 138);
+  background: rgb(226, 241, 88);
   height: 50vh;
 }
 
@@ -52,7 +52,7 @@
   display: block;
   height: 50px;
   background-size: 50px 100%;
-  background-image: linear-gradient(135deg, rgb(138, 231, 138) 25%, transparent 25%), linear-gradient(225deg, rgb(138, 231, 138) 25%, transparent 25%);
+  background-image: linear-gradient(135deg, rgb(226, 241, 88) 25%, transparent 25%), linear-gradient(225deg, rgb(226, 241, 88) 25%, transparent 25%);
   background-position: 0 0;
 }
 
@@ -87,7 +87,7 @@ h4 {
 
 .spikes {
   position: relative;
-  background: rgb(138, 231, 138);
+  background: rgb(226, 241, 88);
   height: 30vh;
 }
 
@@ -101,7 +101,7 @@ h4 {
   display: block;
   height: 50px;
   background-size: 50px 100%;
-  background-image: linear-gradient(135deg, rgb(138, 231, 138) 25%, transparent 25%), linear-gradient(225deg, rgb(138, 231, 138) 25%, transparent 25%);
+  background-image: linear-gradient(135deg, rgb(226, 241, 88) 25%, transparent 25%), linear-gradient(225deg, rgb(226, 241, 88) 25%, transparent 25%);
   background-position: 0 0;
 }
 
@@ -118,7 +118,7 @@ h4 {
 #botonCalculo {
   color: rgb(5, 5, 75);
   border-radius: 10px;
-  background-color: rgb(138, 231, 138);
+  background-color: rgb(226, 241, 88);
   border: 2px;
   width: 40%;
   margin: 50px;
@@ -151,7 +151,7 @@ h4 {
 
 #descripcion {
   background-color: rgb(5, 5, 75);
-  color: rgb(138, 231, 138);
+  color: rgb(226, 241, 88);
 }
 
 #mensajeResaltado {
@@ -176,7 +176,7 @@ h4 {
   margin-top: 10px;
 }
 .datos:hover {
-  border-color: rgb(138, 231, 138);
+  border-color: rgb(226, 241, 88);
 }
 
 #btn {
